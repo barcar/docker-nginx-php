@@ -8,6 +8,7 @@ services:
         container_name: ${APP_NAME:?err}-php
         volumes:
             - './app:/var/www/html'
+        network_mode: host
 #        depends_on:
 #            - mariadb
 
@@ -22,7 +23,7 @@ services:
         volumes:
             - './app:/var/www/html'
             - './config/nginx:/etc/nginx/conf.d'
-
+        network_mode: host
 #    mariadb:
 #        image: mariadb:10.3.9
 #        container_name: ${APP_NAME:?err}-mariadb
