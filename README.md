@@ -1,6 +1,6 @@
 # Docker Compose LEMP Stack
 
-This repository contains a little `docker-compose` configuration to start a `LEMP (Linux, Nginx, MariaDB, PHP)` stack.
+This repository contains a little `docker-compose` configuration to start a `LEMP (Linux, Nginx, PHP)` stack.
 
 ## Details
 
@@ -8,7 +8,6 @@ The following versions are used.
 
 * PHP 7.2 (FPM) - With MySQLi driver optionally (Uncomment line from php.Dockerfile)
 * Nginx 1.13.6
-* MariaDB 10.3.9
 
 ## Configuration
 
@@ -19,7 +18,6 @@ You can also set the following environment variables, for example in the include
 | Key | Description |
 |-----|-------------|
 |APP_NAME|The name used when creating a container.|
-|MYSQL_ROOT_PASSWORD|The MySQL root password used when creating the container.|
 
 ## Usage
 
@@ -43,4 +41,3 @@ Where `{CONTAINER_NAME}` is one of:
 
 * `{APP_NAME}-php`
 * `{APP_NAME}-nginx`
-* `{APP_NAME}-mariadb`
