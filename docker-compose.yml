@@ -7,7 +7,7 @@ services:
             dockerfile: php.Dockerfile
         container_name: ${APP_NAME:?err}-php
         volumes:
-            - './app:/var/www/html'
+          - './app:/var/www/html'
         network_mode: host
 #        depends_on:
 #            - mariadb
@@ -21,7 +21,8 @@ services:
             - '443:443'
         #links:
         #    - 'php'
-        depends_on: php
+        depends_on: 
+          - php
         network_mode: host
         volumes:
             - './app:/var/www/html'
