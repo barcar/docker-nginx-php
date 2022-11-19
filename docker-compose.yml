@@ -8,6 +8,7 @@ services:
         container_name: ${APP_NAME:?err}-php
         volumes:
             - './app:/var/www/html'
+         network_mode: host
 #        depends_on:
 #            - mariadb
         labels:
@@ -18,8 +19,10 @@ services:
         ports:
             - '80:80'
             - '443:443'
-        links:
-            - 'php'
+        #links:
+        #    - 'php'
+        depends_on: php
+        network_mode: host
         volumes:
             - './app:/var/www/html'
             - './config/nginx:/etc/nginx/conf.d'
