@@ -26,9 +26,9 @@ services:
         network_mode: host
         volumes:
             - './app:/var/www/html'
-            - './config/nginx:/etc/nginx/conf.d'
             - getssl_data:/mnt/letsencrypt
             - nginx_data:/mnt/nginx
+            - '/var/lib/docker/volumes/nginx_data/_data/conf.d:etc/nginx/conf.d'
         labels:
             - "com.centurylinklabs.watchtower.enable=true"
         restart: unless-stopped
