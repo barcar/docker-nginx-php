@@ -28,7 +28,7 @@ services:
             - './app:/var/www/html'
             - getssl_data:/mnt/letsencrypt
             - nginx_data:/mnt/nginx
-            - '/var/lib/docker/volumes/nginx_data/_data/conf.d:etc/nginx/conf.d'
+            - /var/lib/docker/volumes/nginx_data/_data/conf.d:etc/nginx/conf.d
         labels:
             - "com.centurylinklabs.watchtower.enable=true"
         restart: unless-stopped
