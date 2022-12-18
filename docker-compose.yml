@@ -27,8 +27,11 @@ services:
         volumes:
             - './app:/var/www/html'
             - './config/nginx:/etc/nginx/conf.d'
+            - getssl_data:/mnt/letsencrypt
+            - nginx_data:/mnt/nginx
         labels:
             - "com.centurylinklabs.watchtower.enable=true"
+        restart: unless-stopped
 #    mariadb:
 #        image: mariadb:10.3.9
 #        container_name: ${APP_NAME:?err}-mariadb
@@ -37,3 +40,8 @@ services:
 #            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?err}
 #        volumes:
 #            - ${PWD}
+volumes:
+  getssl_data:
+    external: true
+  nginx_data:
+    external: true
